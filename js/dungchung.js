@@ -151,6 +151,51 @@ function checkTaiKhoan() {
 }
 
 //  ================================ WEB 2 =================================
+function checkDangNhap() {
+    var a = document.getElementById('username').value;
+    var b = document.getElementById('pass').value;
+
+    $.ajax({
+        url: "php/xulytaikhoan.php",
+        type: "post",
+        dataType: "json",
+        timeout: 1500,
+        data: {
+            request: 'dangnhap',
+            data_username: a,
+            data_pass: b
+        },
+        success: function(data, status, xhr) {
+            console.log(data);
+
+            if(data != null) {
+                Swal.fire({
+                    type: "success",
+                    title: "Đăng nhập thành công",
+                    text: "Chào " + data.Ho + " " + data.Ten
+                }).then((result) => {
+                    capNhatThongTinUser();
+                });
+                showTaiKhoan(false);
+
+            } else {
+                Swal.fire({
+                    type: "error",
+                    title: "Tên tài khoản hoăc mật khẩu không đúng"
+                });
+            }
+        },
+        error: function(e) {
+            Swal.fire({
+                type: "error",
+                title: "Lỗi khi đăng nhập",
+                // html: e.responseText
+            });
+            console.log(e.responseText)
+        }
+    });
+    return false;
+}
 function checkDangKy() {
     var ho = document.getElementById('ho').value;
     var ten = document.getElementById('ten').value;
@@ -202,51 +247,7 @@ function checkDangKy() {
     return false;
 }
 
-function checkDangNhap() {
-    var a = document.getElementById('username').value;
-    var b = document.getElementById('pass').value;
 
-    $.ajax({
-        url: "php/xulytaikhoan.php",
-        type: "post",
-        dataType: "json",
-        timeout: 1500,
-        data: {
-            request: 'dangnhap',
-            data_username: a,
-            data_pass: b
-        },
-        success: function(data, status, xhr) {
-            console.log(data);
-
-            if(data != null) {
-                Swal.fire({
-                    type: "success",
-                    title: "Đăng nhập thành công",
-                    text: "Chào " + data.Ho + " " + data.Ten
-                }).then((result) => {
-                    capNhatThongTinUser();
-                });
-                showTaiKhoan(false);
-
-            } else {
-                Swal.fire({
-                    type: "error",
-                    title: "Tên tài khoản hoăc mật khẩu không đúng"
-                });
-            }
-        },
-        error: function(e) {
-            Swal.fire({
-                type: "error",
-                title: "Lỗi khi đăng nhập",
-                // html: e.responseText
-            });
-            console.log(e.responseText)
-        }
-    });
-    return false;
-}
 
 function checkDangXuat(onSuccess) {
     Swal.fire({

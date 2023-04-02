@@ -4,6 +4,8 @@
 		position: -webkit-sticky; /* Safari */
 		top: 0;
 		z-index: 12;
+		display: flex;
+		align-items: center;
 		background-color: white;
 		padding: 15px 0 5px 0 ;
 		border-bottom: 3px solid #e1e1e1;
@@ -15,8 +17,8 @@
 
 	/* Logo */
 		.header .logo {
-			width: 250px;
-			height: 60px;
+			width: 130px;
+			height: 130px;
 			float: left;
 			transition-duration: .1s;
 		}

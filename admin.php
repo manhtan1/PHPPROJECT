@@ -91,7 +91,7 @@
                         <td style'width: 5%'>" . $i++ . "</td>
                         <td style='width: 10%'>" . $row['MaSP'] . "</td>
                         <td style='width: 40%'>
-                            <a title='Xem chi tiết' target='_blank' href='chitietsanpham.php?" . $row['TenSP'] . "'>" . $row['TenSP'] . "</a>
+                            <a title='Xem chi tiết' target='_blank' href='chitietsanpham.php?" . $row['MaSP'] . "'>" . $row['TenSP'] . "</a>
                             <img src='" . $row['HinhAnh'] . "'></img>
                         </td>
                         <td style='width: 15%'>" . $row['DonGia'] . "</td>
@@ -154,34 +154,29 @@
                             </td>
                         </tr>
                         <?php
-                            $tenfilemoi= "";
-                                if (isset($_POST["submit"]))
-                                {
-                                    if (($_FILES["hinhanh"]["type"]=="image/jpeg") ||($_FILES["hinhanh"]["type"]=="image/png") || ($_FILES["hinhanh"]["type"]=="image/jpg") && ($_FILES["hinhanh"]["size"] < 50000) )
-                                    {
-                                        if ($_FILES["file"]["error"] > 0 || file_exists("img/products/" . basename($_FILES["hinhanh"]["name"]))) 
-                                        {
-                                            echo ("Error Code: " . $_FILES["file"]["error"] . "<br />Chỉnh sửa ảnh lại sau)");
-                                        }
-                                        else
-                                        {
-                                            /*$tmp = explode(".", $_FILES["hinhanh"]["name"]);
-                                            $duoifile = end($tmp);
-                                            $masp = $_POST['maspThem'];
-                                            $tenfilemoi = $masp . "." . $duoifile;*/
-                                            $file = $_FILES["hinhanh"]["name"];
-                                            $tenfilemoi = "img/products/" .$_FILES["hinhanh"]["name"];
-                                            move_uploaded_file( $_FILES["hinhanh"]["tmp_name"], $tenfilemoi);
-                                        }
-                                    }
+                            $tenfilemoi = "";
+                            if (isset($_POST["submit"])) {
+                                $hinhanh = $_FILES["hinhanh"];
+                            
+                                if ($hinhanh["error"] == UPLOAD_ERR_OK &&
+                                    in_array($hinhanh["type"], array("image/jpeg", "image/png", "image/jpg")) &&
+                                    $hinhanh["size"] < 50000 &&
+                                    !file_exists("img/products/" . $hinhanh["name"])
+                                ) {
+                                    $tenfilemoi = "img/products/" . $hinhanh["name"];
+                                    move_uploaded_file($hinhanh["tmp_name"], $tenfilemoi);
+                                } else {
+                                    echo "Lỗi upload ảnh sản phẩm. Vui lòng kiểm tra lại.";
                                 }
+                            }
+                            
                         // require_once ("php/uploadfile.php");
                         ?>
                         <tr>
                             <td>Hình:</td>
                             <td>
                                 <img class="hinhDaiDien" id="anhDaiDienSanPhamThem" src="">
-                                <input type="file" name="hinhanh" onchange="capNhatAnhSanPham(this.files, 'anhDaiDienSanPhamThem', '<?php echo $tenfilemoi; ?>')">
+                                <input type="file" class="hinhh" name="hinhanh" onchange="capNhatAnhSanPham(this.files, 'anhDaiDienSanPhamThem', '<?php echo $tenfilemoi; ?>')">
                                 <input style="display: none;" type="text" id="hinhanh" value="">
                             </td>
                         </tr>
@@ -357,5 +352,4 @@
 
     </footer>
 </body>
-
 </html>

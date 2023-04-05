@@ -130,28 +130,8 @@ function addHome()
         </button>
     </div>
 
-    <div class="timNangCao">
-        <div class="flexContain">
-            <div class="pricesRangeFilter dropdown">
-                <button class="dropbtn">Giá tiền</button>
-                <div class="dropdown-content"></div>
-            </div>
-
-            <div class="promosFilter dropdown">
-                <button class="dropbtn">Khuyến mãi</button>
-                <div class="dropdown-content"></div>
-            </div>
-
-            <div class="starFilter dropdown">
-                <button class="dropbtn">Số lượng sao</button>
-                <div class="dropdown-content"></div>
-            </div>
-
-            <div class="sortFilter dropdown">
-                <button class="dropbtn">Sắp xếp</button>
-                <div class="dropdown-content"></div>
-            </div>            
-        </div>
+    <div class="timNangCao" ">
+        
         
         <div>
             <input type="text" class="js-range-slider" id="demoSlider">
@@ -207,20 +187,7 @@ function addChiTietSanPham()
                         <div id="detailPromo"> </div>
                     </div>
                 </div>
-                <div class="policy">
-                    <div>
-                        <i class="fa fa-archive"></i>
-                        <p>Trong hộp có: Sạc, Tai nghe, Sách hướng dẫn, Cây lấy sim, Ốp lưng </p>
-                    </div>
-                    <div>
-                        <i class="fa fa-star"></i>
-                        <p>Bảo hành chính hãng 12 tháng.</p>
-                    </div>
-                    <div class="last">
-                        <i class="fa fa-retweet"></i>
-                        <p>1 đổi 1 trong 1 tháng nếu lỗi, đổi sản phẩm tại nhà trong 1 ngày.</p>
-                    </div>
-                </div>
+                
                 <div class="area_order">
                     <!-- nameProduct là biến toàn cục được khởi tạo giá trị trong phanTich_URL_chiTietSanPham -->
                     <a class="buy_now" onclick="themVaoGioHang(maProduct, nameProduct);">
@@ -228,7 +195,10 @@ function addChiTietSanPham()
                     </a>
                 </div>
             </div>
+            
+            
             <div class="info_product">
+            <h1>Chi tiết sản phẩm</h1>
                 <h2>Thông số kỹ thuật</h2>
                 <ul class="info">
 
@@ -273,17 +243,51 @@ function addChiTietSanPham()
 function addFooter()
 {
     echo '
-    <!-- ============== Alert Box ============= -->
-    <div id="alert">
-        <span id="closebtn">&otimes;</span>
-    </div>
+    
+    <div class="footer-main" style="display: flex;
+    width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 15px 0;">
 
-    <!-- ============== Footer ============= -->
-    <div class="copy-right">
-        <p>
-            All rights reserved © 2018-' . date("Y") . ' - Designed by
-            <span style="color: #eee; font-weight: bold">H-group</span>
-        </p>
+        <ul style="list-style: none;" class="footer-about" >
+            <li class="footer-item" style="font-size: 20px; font-weight: bold; margin: 10px 0px;"><a>Về chúng tôi</a></li>
+            <li class="footer-item " style="margin: 10px 0px;><a href="${pageContext.request.contextPath}/view/client/introduce">Giới thiệu về chúng tôi</a></li>
+            <li class="footer-item " style="margin: 10px 0px;><a href="${pageContext.request.contextPath}/view/client/security">Chính sách bảo mật</a></li>
+            <li class="footer-item " style="margin: 10px 0px;><a href="${pageContext.request.contextPath}/view/client/contact">Liên hệ</a></li>
+        </ul>
+        <div class="footer-support">
+            <li style="font-size: 20px; font-weight: bold;list-style: none; margin: 10px 0px;" class="footer-item"><a href="#">Hỗ trợ khách hàng</a></li>
+            <li style="list-style: none; margin: 10px 0px;" class="footer-item"><a href="#">Hướng dẫn đặt hàng</a></li>
+            <li style="list-style: none; margin: 10px 0px;" class="footer-item"><a href="#">Hướng dẫn thanh toán</a></li>
+            <li style="list-style: none; margin: 10px 0px;" class="footer-item"><a href="#">Hệ thống cửa hàng</a></li>
+        </div>
+        <div style="font-size: 20px; font-weight: bold;list-style: none; margin: 10px 0px;" class="footer-subscribe">
+            
+            <p>Subscribe</p>
+            <div class="footer-subscribe-link">
+                <input type="text" name="subscribe" style="padding: 5px 7px;
+                border-radius: 10px;
+                border: none;
+                margin: 7px 0;
+            }">
+               
+            </div>
+            <p>Nhập email của bạn tại đây</p>
+
+        </div>
+        <div class="footer-support" style="width:25%;">
+            <iframe style="width:100%; height:auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.126561572459!2d106.71226721557215!3d10.801617492304494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a459cb43ab%3A0x6c3d29d370b52a7e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVFAuSENNIC0gSFVURUNI!5e0!3m2!1svi!2s!4v1680718783101!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>   
+    </div>
+    <div style="    text-align: center;
+    font-size: 17px;
+    padding: 10px;" class="footer-bottom">
+        <div class="footer-design">
+            <p>@CopyRight Hutech 2023</p>
+        </div>
+        
     </div>';
 }
 
@@ -312,7 +316,7 @@ function addContainTaiKhoan()
                             </label>
                             <input name="pass" type="password" id="pass" required autocomplete="off" />
                         </div> <!-- pass -->
-                        <ul class="">
+                         style="list-style: none;" class="">
                             <li class="tab">
                                     <span style="color: #fff;
                                 font-size: 16px;
@@ -381,21 +385,3 @@ function addContainTaiKhoan()
 }
 
 // Thêm plc (phần giới thiệu trước footer)
-function addPlc()
-{
-    echo '
-    <div class="plc">
-        <section>
-            <ul class="flexContain">
-                <li>Giao hàng hỏa tốc trong 1 giờ</li>
-                <li>Thanh toán linh hoạt: tiền mặt, visa / master, trả góp</li>
-                <li>Trải nghiệm sản phẩm tại nhà</li>
-                <li>Lỗi đổi tại nhà trong 1 ngày</li>
-                <li>Hỗ trợ suốt thời gian sử dụng.
-                    <br>Hotline:
-                    <a href="tel:12345678" style="color: #288ad6;">1234.5678</a>
-                </li>
-            </ul>
-        </section>
-    </div>';
-}

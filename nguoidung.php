@@ -41,8 +41,16 @@
 
 <body>
 
+<div style="background: #476;">
+	<div style="width: 1200px;
+    margin: 0 auto;
+    background: #447766;">
+			<?php 
+			addHeader(); 
+		?></div>
+	</div>
+			
 	<section>
-		<?php addHeader(); ?>
 
 		<div class="infoUser"> </div>
 		<div class="listDonHang"> </div>
@@ -69,7 +77,6 @@
 
 	<?php 
 		addContainTaiKhoan();
-		addPlc(); 
 	?>
 
 	<div class="footer">

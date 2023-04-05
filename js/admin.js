@@ -725,8 +725,8 @@ function refreshTableDonHang() {
             request: "getall",
         },
         success: function(data, status, xhr) {
+            list_products = data; // biến toàn cục lưu trữ mảng sản phẩm hiện có
             addTableDonHang(data);
-            console.log(data);
         },
         error: function(e) {
             Swal.fire({
@@ -734,9 +734,11 @@ function refreshTableDonHang() {
                 title: "Lỗi lấy dữ liệu khách Hàng (admin.js > refreshTableKhachHang)",
                 html: e.responseText
             });
+            console.log(e.responseText)
         }
     });
 }
+
 function addTableDonHang(data) {
     var tc = document.getElementsByClassName('donhang')[0].getElementsByClassName('table-content')[0];
     var s = `<table class="table-outline hideImg">`;

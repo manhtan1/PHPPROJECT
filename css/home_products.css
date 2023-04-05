@@ -14,7 +14,10 @@
 	/* <li> trong homeproduct có class="sanPham" , khai báo trong classes.js */
 	.sanPham {
 		width: 238px;
+		background: #fff;
 		border: 1px solid #eee;
+		box-shadow: 2px 2px 5px #ccc;
+		border-radius: 5px;
     	-webkit-transition-duration: .3s;
     	     -o-transition-duration: .3s;
     	        transition-duration: .3s;

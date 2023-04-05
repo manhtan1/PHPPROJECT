@@ -41,8 +41,15 @@
 
 <body>
 
-	<section style="min-height: 85vh">
-		<?php addHeader(); ?>
+<div style="background: #476;">
+	<div style="width: 1200px;
+    margin: 0 auto;
+    background: #447766;">
+			<?php 
+			addHeader(); 
+		?></div>
+	</div>
+	<section style="min-height: 45vh">
 
 		<table class="listSanPham"></table>
 
@@ -74,8 +81,6 @@
 		<?php addFooter(); ?>
 	</div>
 
-	<i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
-	<i class="fa fa-arrow-down" id="goto-bot-page" onclick="gotoBot()"></i>
 </body>
 
 </html>

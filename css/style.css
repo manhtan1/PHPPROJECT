@@ -45,7 +45,7 @@ hr {
     flex-direction: row;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 /* Use for auto clear float */

@@ -107,9 +107,8 @@ function addProductToTable(listProduct) {
 				</td>
 				<td class="alignRight">` + numToString(price) + ` ₫</td>
 				<td class="soluong" >
-					<button onclick="giamSoLuong('` + masp + `')"><i class="fa fa-minus"></i></button>
+					
 					<input size="1" onchange="capNhatSoLuongFromInput(this, '` + masp + `')" value=` + soluongSp + `>
-					<button onclick="tangSoLuong('` + masp + `')"><i class="fa fa-plus"></i></button>
 				</td>
 				<td class="alignRight">` + numToString(thanhtien) + ` ₫</td>
 				<td class="noPadding"> 
@@ -124,13 +123,13 @@ function addProductToTable(listProduct) {
     TotalPrice = totalPrice;
 
     s += `
-			<tr style="font-weight:bold; text-align:center">
-				<td colspan="3">TỔNG TIỀN: </td>
-				<td class="alignRight" style="color:red">` + numToString(totalPrice) + ` ₫</td>
+			<tr style="font-weight:bold; text-align:center;" >
+				<td colspan="3" style="padding:3px;"> </td>
+				<td class="alignRight" style="color:red">TỔNG TIỀN:  ` + numToString(totalPrice) + ` ₫</td>
 				<td></td>
 			</tr>
 			<tr>
-				<td colspan="5">
+				<td colspan="5" style="text-align: end;background: #fff;">
 					<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="thanhToan()">
 						<i class="fa fa-usd"></i> Thanh Toán 
 					</button> 

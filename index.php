@@ -51,11 +51,18 @@
 </head>
 
 <body>
-	
-
+	<div style="background: #476;">
+	<div style="width: 1200px;
+    margin: 0 auto;
+    background: #447766;">
+			<?php 
+			addHeader(); 
+		?></div>
+	</div>
+			
+			
 	<section>
 		<?php 
-			addHeader(); 
 			
 			addHome();
 		?>
@@ -64,16 +71,11 @@
 
 	<?php
 		addContainTaiKhoan();
-		addPlc();
 	?>
 
-	<div class="footer">
+	<div id="aa-footer" class="footer">
 		<?php addFooter(); ?>
 	</div>
-
-	<i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
-	<i class="fa fa-arrow-down" id="goto-bot-page" onclick="gotoBot()"></i>
-
 </body>
 
 </html>

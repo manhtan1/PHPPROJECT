@@ -139,8 +139,8 @@
 .khungSanPham {
 	width: 100%;
 	margin: 50px 0;
-	border-radius: 5px;
-	border: 2px solid #ff4d00; 
+	/* border-radius: 5px; */
+	/* border: 2px solid #ff4d00;  */
 	box-sizing: border-box; /* dùng để width ko vượt ra ngoài khi có border */
 }
 
@@ -149,9 +149,10 @@
 	font-size: 1.5em;
 	text-align: center;
 	margin: 0 auto;
-	border-radius: 1em;
+	padding: 5px;
+	/* border-radius: 1em; */
 	color: white;
-	transform: translateY(-0.75em);
+	/* transform: translateY(-0.75em); */
 }
 
 .khungSanPham li {

@@ -34,7 +34,7 @@
 .picture {
     float: left;
     overflow: hidden;
-    width: 33%;
+    width: 50%;
     position: relative;
     /*định vị trí phụ thuộc vào thành phần bao ngoài*/
     display: block;
@@ -248,10 +248,11 @@
 }
 
 .info_product {
-    width: 33%;
+    width: 100%;
     border: 1px solid #ddd;
     float: left;
     border-radius: 3px;
+    margin: 20px;
     display: block;
 }
 
@@ -368,7 +369,6 @@
 /* ================== Binh luan ==================*/
 .guiBinhLuan {
     box-sizing: border-box;
-    border: 10px solid #252525;
 }
 
 #inpBinhLuan {

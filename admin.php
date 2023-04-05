@@ -33,7 +33,7 @@
 
 <body>
     <header>
-        <h2>SmartPhone Store - Admin</h2>
+        <h2>Thế giớ Smartphone - Admin</h2>
     </header>
 
     <!-- Menu -->

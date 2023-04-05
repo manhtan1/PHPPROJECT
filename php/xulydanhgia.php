@@ -3,6 +3,12 @@
 	if(!isset($_POST['request']) && !isset($_GET['request'])) die();
 
 	switch ($_POST['request']) {
+		case 'getalldanhgia':
+
+			$danhgia = (new DanhGiaBUS())->select_all();
+			
+			die (json_encode($danhgia));
+			break;
 		case 'thembinhluan':
 			$masp = $_POST['masp'];
 			$mand = $_POST['mand'];
@@ -33,6 +39,10 @@
 
 			die (json_encode($dsbl));
 			break;
+		
+		default:
+    		break;
+    
 	}
 
 ?>

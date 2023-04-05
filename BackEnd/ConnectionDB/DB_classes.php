@@ -82,6 +82,19 @@ class NguoiDungBUS extends DB_business
         parent::add_new($data);
     }
 }
+class DanhGiaBUS extends DB_business
+{
+    function __construct()
+    {
+        $this->setTable("DanhGia", "MaSP");
+    }
+
+    function getdanhgia($masp) {
+        $sql = "SELECT * FROM danhgia WHERE MaSP=$masp";
+        $dsdh = (new DanhGiaBUS())->get_list($sql);
+    }
+  
+}
 
 // Lớp hóa đơn
 class HoaDonBUS extends DB_business

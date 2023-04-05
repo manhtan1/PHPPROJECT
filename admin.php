@@ -44,6 +44,8 @@
             <li class="nav-item" onclick="refreshTableSanPham()"><a class="nav-link"><i class="fa fa-th-large"></i> Sản Phẩm</a></li>
             <li class="nav-item" onclick="refreshTableDonHang()"><a class="nav-link"><i class="fa fa-file-text-o"></i> Đơn Hàng</a></li>
             <li class="nav-item" onclick="refreshTableKhachHang()"><a class="nav-link"><i class="fa fa-address-book-o"></i> Khách Hàng</a></li>
+            <li class="nav-item" onclick="refreshTableDANHGIA()"><a class="nav-link"><i class="fa fa-address-book-o"></i> Đánh giá</a></li>
+
             <li class="nav-item"><a class="nav-link"><i class="fa fa-bar-chart-o"></i> Thống Kê</a></li>
             <hr>
             <li class="nav-item">
@@ -324,7 +326,35 @@
                 <input type="text" placeholder="Tìm kiếm..." onkeyup="timKiemNguoiDung(this)">
                 <button onclick="openThemNguoiDung()"><i class="fa fa-plus-square"></i> Thêm người dùng</button>
             </div>
-        </div> <!-- // khach hang -->
+        </div>
+        <div class="danhgia">
+            <table class="table-header">
+                <tr>
+                <th title="Sắp xếp"  onclick="sortDanhGiaTable('stt')">Stt <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp"  onclick="sortDanhGiaTable('MaND')">Mã sản phẩm <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp"  onclick="sortDanhGiaTable('MaSP')">Email <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" onclick="sortDanhGiaTable('SoSao')">Số sao đánh giá <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" onclick="sortDanhGiaTable('BinhLuan')">Đánh giá <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" onclick="sortDanhGiaTable('NgayLap')">Ngày đánh giá <i class="fa fa-sort"></i></th>
+                </tr>
+            </table>
+
+            <div class="table-content">
+            </div>
+
+            <div class="table-footer">
+                <select name="kieuTimKhachHang">
+                    <option value="ten">Tìm theo họ tên</option>
+                    <option value="email">Tìm theo email</option>
+                    <option value="taikhoan">Tìm theo tài khoản</option>
+                </select>
+                <input type="text" placeholder="Tìm kiếm..." onkeyup="timKiemNguoiDung(this)">
+                <button onclick="openThemNguoiDung()"><i class="fa fa-plus-square"></i> Thêm người dùng</button>
+            </div>
+        </div>
+        
+
+           
 
         <!-- Thống kê -->
         <div class="thongke">

@@ -940,6 +940,28 @@ function refreshTableKhachHang() {
         }
     });
 }
+function refreshTableDANHGIA() {
+    $.ajax({
+        type: "POST",
+        url: "php/xulydanhgia.php",
+        dataType: "json",
+        // timeout: 1500, // sau 1.5 giây mà không phản hồi thì dừng => hiện lỗi
+        data: {
+            request: "getalldanhgia",
+        },
+        success: function(data, status, xhr) {
+            addTableDANHGIA(data);
+            console.log(data);
+        },
+        error: function(e) {
+            Swal.fire({
+                type: "error",
+                title: "Lỗi lấy dữ liệu khách Hàng (admin.js > refreshTableDANHGIA)",
+                html: e.responseText
+            });
+        }
+    });
+}
 
 function thayDoiTrangThaiND(inp, mand) {
     var trangthai = (inp.checked?1:0);  
@@ -997,6 +1019,28 @@ function addTableKhachHang(data) {
                     <span class="tooltiptext">Xóa</span>
                 </div>
             </td>
+        </tr>`;
+    }
+
+    s += `</table>`;
+    tc.innerHTML = s;
+}
+function addTableDANHGIA(data) {
+    var tc = document.getElementsByClassName('danhgia')[0].getElementsByClassName('table-content')[0];
+    var s = `<table class="table-outline hideImg">`;
+
+
+    for (var i = 0; i < data.length; i++) {
+        var u = data[i];
+        console.log(u.MaSP)
+
+        s += `<tr>
+            <td >` + (i + 1) + `</td>
+            <td >` + u.MaND + `</td>
+            <td >` + u.MaSP + `</td>
+            <td >` + u.SoSao + `</td>   
+            <td >` + u.BinhLuan + `</td>   
+            <td >` + u.NgayLap + `</td>            
         </tr>`;
     }
 
@@ -1086,6 +1130,13 @@ function sortKhachHangTable(loai) {
     decrease = !decrease;
 }
 
+function sortDanhGiaTable(loai) {
+    var list = document.getElementsByClassName('danhgia')[0].getElementsByClassName("table-content")[0];
+    var tr = list.getElementsByTagName('tr');
+
+    quickSort(tr, 0, tr.length - 1, loai, getValueOfTypeInTable_DANHGIA);
+    decrease = !decrease;
+}
 function getValueOfTypeInTable_KhachHang(tr, loai) {
     var td = tr.getElementsByTagName('td');
     switch (loai) {
@@ -1099,6 +1150,24 @@ function getValueOfTypeInTable_KhachHang(tr, loai) {
             return td[3].innerHTML.toLowerCase();
         case 'matkhau':
             return td[4].innerHTML.toLowerCase();
+    }
+    return false;
+}
+function getValueOfTypeInTable_DANHGIA(tr, loai) {
+    var td = tr.getElementsByTagName('td');
+    switch (loai) {
+        case 'stt':
+            return Number(td[0].innerHTML);
+        case 'MaND':
+            return td[1].innerHTML.toLowerCase();
+        case 'MaSP':
+            return td[2].innerHTML.toLowerCase();
+        case 'SoSao':
+            return td[3].innerHTML.toLowerCase();
+        case 'BinhLuan':
+            return td[4].innerHTML.toLowerCase();
+        case 'NgayLap':
+            return td[5].innerHTML.toLowerCase();
     }
     return false;
 }

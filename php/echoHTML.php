@@ -90,10 +90,36 @@ function addHeader()
 function addHome()
 {
     echo '
-    <div class="banner">
-        <div class="owl-carousel owl-theme"></div>
-    </div> <!-- End Banner -->
-    
+    <div class="option-promo">
+			<ul class="option-list">
+				<li class="option-item">
+					<a href="">
+						<img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/dien-thoai-120x120-7.png" alt="">
+						<span>Điện Thoại Giá Sốc</span>
+					</a>
+				</li>
+				<li class="option-item">
+					<a href="">
+						<img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/Group-8-120x120-3.png" alt="">
+						<span>Phụ kiện rẻ ngất ngư</span>
+					</a>
+				</li>
+				<li class="option-item">
+					<a href="">
+						<img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/icon-TGDDD-90x90-1.png" alt="">
+						<span>Giảm đến 50%</span>
+					</a>
+				</li>
+				<li class="option-item">
+					<a href="">
+						<img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn//content/Frame-46604--1--120x120-2.png" alt="">
+						<span>
+                    Galaxy S23 Series Giảm Sốc
+                </span>
+					</a>
+				</li>
+			</ul>
+		</div>
     <div class="smallbanner" style="width: 100%;"></div>
 
     <div class="companysFilter">
@@ -103,7 +129,6 @@ function addHome()
             <div id="iconCloseMenu" style="display: none;">▽</div>
         </button>
     </div>
-    <div class="companyMenu group flexContain"></div>
 
     <div class="timNangCao">
         <div class="flexContain">
@@ -269,78 +294,80 @@ function addContainTaiKhoan()
 	<div class="containTaikhoan">
     <span class="close" onclick="showTaiKhoan(false);">&times;</span> 
         <div class=" taikhoan">
-            <ul class="tab-group">
-                <li class="tab active"><a href="#login">Đăng nhập</a></li>
-                <li class="tab"><a href="#signup">Đăng kí</a></li>
-            </ul> <!-- /tab group -->
             <div class="tab-content">
                 <div id="login">
-                    <h1>Chào mừng bạn trở lại!</h1>
+            <h1>Đăng nhập</h1>
+                    
                     <!-- <form onsubmit="return logIn(this);"> -->
                     <form action="" method="post" name="formDangNhap" onsubmit="return checkDangNhap();">
                         <div class="field-wrap">
                             <label>
-                                Tên đăng nhập<span class="req">*</span>
+                                Tên đăng nhập
                             </label>
                             <input name="username" type="text" id="username" required autocomplete="off" />
                         </div> <!-- /user name -->
                         <div class="field-wrap">
                             <label>
-                                Mật khẩu<span class="req">*</span>
+                                Mật khẩu
                             </label>
                             <input name="pass" type="password" id="pass" required autocomplete="off" />
                         </div> <!-- pass -->
-                        <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
-                        <button type="submit" class="button button-block" />Tiếp tục</button>
-                    </form> <!-- /form -->
+                        <ul class="">
+                            <li class="tab">
+                                    <span style="color: #fff;
+                                font-size: 16px;
+                                float: right;
+                                margin: 10px 0;">Bạn chưa có tài khoản <a href="#signup"> Đăng ký</a></span>
+                            </li>
+                        </ul>
+                        
+                        
+                        <button type="submit" class="button button-block" />Đăng nhập</button>
+                    </form> 
                 </div> <!-- /log in -->
                 <div id="signup">
-                    <h1>Đăng kí miễn phí</h1>
+                    <h1>Đăng kí Tài Khoản</h1>
                     <!-- <form onsubmit="return signUp(this);"> -->
                     <form action="" method="post" name="formDangKy" onsubmit="return checkDangKy();">
-                        <div class="top-row">
                             <div class="field-wrap">
                                 <label>
-                                    Họ<span class="req">*</span>
+                                    Họ
                                 </label>
                                 <input name="ho" type="text" id="ho" required autocomplete="off" />
                             </div>
                             <div class="field-wrap">
                                 <label>
-                                    Tên<span class="req">*</span>
+                                    Tên
                                 </label>
                                 <input name="ten" id="ten" type="text" required autocomplete="off" />
                             </div>
-                        </div> <!-- / ho ten -->
-                        <div class="top-row">
                             <div class="field-wrap">
                                 <label>
-                                    Điện thoại<span class="req">*</span>
+                                    Điện thoại
                                 </label>
                                 <input name="sdt" id="sdt" type="text" pattern="\d*" minlength="10" maxlength="12" required autocomplete="off" />
                             </div> <!-- /sdt -->
                             <div class="field-wrap">
                                 <label>
-                                    Email<span class="req">*</span>
+                                    Email
                                 </label>
                                 <input name="email" id="email" type="email" required autocomplete="off" />
-                            </div> <!-- /email -->
                         </div>
                         <div class="field-wrap">
                             <label>
-                                Địa chỉ<span class="req">*</span>
+                                Địa chỉ
                             </label>
                             <input name="diachi" id="diachi" type="text" required autocomplete="off" />
                         </div> <!-- /user name -->
                         <div class="field-wrap">
                             <label>
-                                Tên đăng nhập<span class="req">*</span>
+                                Tên đăng nhập
                             </label>
                             <input name="newUser" id="newUser" type="text" required autocomplete="off" />
                         </div> <!-- /user name -->
                         <div class="field-wrap">
                             <label>
-                                Mật khẩu<span class="req">*</span>
+                                Mật khẩu
                             </label>
                             <input name="newPass" id="newPass" type="password" required autocomplete="off" />
                         </div> <!-- /pass -->

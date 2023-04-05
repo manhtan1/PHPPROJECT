@@ -40,7 +40,6 @@
 </head>
 
 <body>
-	<?php addTopNav(); ?>
 
 	<section style="min-height: 85vh">
 		<?php addHeader(); ?>

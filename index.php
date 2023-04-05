@@ -51,13 +51,15 @@
 </head>
 
 <body>
-	<?php addTopNav(); ?>
+	
 
 	<section>
 		<?php 
 			addHeader(); 
+			
 			addHome();
 		?>
+		
 	</section>
 
 	<?php

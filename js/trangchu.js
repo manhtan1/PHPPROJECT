@@ -681,20 +681,20 @@ function filterProductsName(ele) {
 // ================= Hàm khác ==================
 
 // Thêm banner
-function addBanner(img, link) {
-    // <a target='_blank' href=` + link + `>
-    var newDiv = `<div class='item'>
-                        <img src=` + img + `>
-                    </div>`;
-    var banner = document.getElementsByClassName('owl-carousel')[0];
-    banner.innerHTML += newDiv;
-}
+// function addBanner(img, link) {
+//     // <a target='_blank' href=` + link + `>
+//     var newDiv = `<div class='item'>
+//                         <img src=` + img + `>
+//                     </div>`;
+//     var banner = document.getElementsByClassName('owl-carousel')[0];
+//     banner.innerHTML += newDiv;
+// }
 
-function addSmallBanner(img) {
-    var newimg = `<img src=` + img + ` style="width: 100%;">`;
-    var smallbanner = document.getElementsByClassName('smallbanner')[0];
-    smallbanner.innerHTML += newimg;
-}
+// function addSmallBanner(img) {
+//     var newimg = `<img src=` + img + ` style="width: 100%;">`;
+//     var smallbanner = document.getElementsByClassName('smallbanner')[0];
+//     smallbanner.innerHTML += newimg;
+// }
 
 // Thêm hãng sản xuất
 function addCompany(img, nameCompany) {

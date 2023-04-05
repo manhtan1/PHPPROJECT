@@ -37,7 +37,6 @@
 
 <body>
 
-    <?php addTopNav(); ?>
 
     <section>
         <?php 

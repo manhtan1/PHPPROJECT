@@ -30,21 +30,27 @@
     <script src="js/dungchung.js"></script>
     <script src="js/admin.js"></script>
 </head>
-
+<style>
+    .home{
+        position: relative;
+    }
+    .ppHome{
+        position: absolute;
+        top: 50%;
+        left: 31%;
+        color: #fff;
+    }
+</style>
 <body>
-    <header>
-        <h2>Thế giớ Smartphone - Admin</h2>
-    </header>
-
     <!-- Menu -->
     <aside class="sidebar">
         <ul class="nav">
-            <li class="nav-title">MENU</li>
+            <li style="padding: 10px;" class="nav-title">DASHBOARD</li>
             <!-- <li class="nav-item"><a class="nav-link active"><i class="fa fa-home"></i> Home</a></li> -->
             <li class="nav-item" onclick="refreshTableSanPham()"><a class="nav-link"><i class="fa fa-th-large"></i> Sản Phẩm</a></li>
             <li class="nav-item" onclick="refreshTableDonHang()"><a class="nav-link"><i class="fa fa-file-text-o"></i> Đơn Hàng</a></li>
             <li class="nav-item" onclick="refreshTableKhachHang()"><a class="nav-link"><i class="fa fa-address-book-o"></i> Khách Hàng</a></li>
-            <li class="nav-item" onclick="refreshTableDANHGIA()"><a class="nav-link"><i class="fa fa-address-book-o"></i> Đánh giá</a></li>
+            <li class="nav-item" onclick="refreshTableDANHGIA()"><a class="nav-link"><i class="fa-solid fa-star"></i>Đánh giá</a></li>
 
             <li class="nav-item"><a class="nav-link"><i class="fa fa-bar-chart-o"></i> Thống Kê</a></li>
             <hr>
@@ -57,14 +63,14 @@
         </ul>
     </aside>
 
-    <!-- Khung hiển thị chính -->
     <div class="main">
-        <div class="home">
-
+        <div class="home" style="width:100%;height:auto; ">
+            <img style="width:100%;padding:20px; height:50%; opacity:0.6;" src="https://i.pcmag.com/imagery/reviews/03POP0TjDjuXonJXI16Omn2-1..v1663720055.jpg" alt="">
+            <h1 class="ppHome">Chào mừng đến với trang quản trị viên !!!</h1>
         </div>
 
         <!-- Sản Phẩm -->
-        <div class="sanpham">
+        <div class="sanpham"style="padding: 20px;">
             <table class="table-header">
                 <tr>
                     <!-- Theo độ rộng của table content -->
@@ -263,7 +269,7 @@
 
 
         <!-- Đơn Hàng -->
-        <div class="donhang">
+        <div class="donhang"style="padding: 20px;">
             <table class="table-header">
                 <tr>
                     <!-- Theo độ rộng của table content -->
@@ -279,6 +285,7 @@
             </table>
 
             <div class="table-content">
+            
             </div>
 
             <div class="table-footer">
@@ -301,61 +308,41 @@
 
 
         <!-- Khách hàng -->
-        <div class="khachhang">
+        <div class="khachhang" style="padding: 20px;">
             <table class="table-header">
                 <tr>
                     <!-- Theo độ rộng của table content -->
-                    <th title="Sắp xếp"  onclick="sortKhachHangTable('stt')">Stt <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp"  onclick="sortKhachHangTable('hoten')">Họ tên <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp"  onclick="sortKhachHangTable('email')">Email <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp" onclick="sortKhachHangTable('taikhoan')">Tài khoản <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp"  style="width: 3%" onclick="sortKhachHangTable('stt')">Stt <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" style="width: 10%" onclick="sortKhachHangTable('hoten')">Họ tên <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" style="width: 19%" onclick="sortKhachHangTable('email')">Email <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp"style="width: 10%" onclick="sortKhachHangTable('taikhoan')">Tài khoản <i class="fa fa-sort"></i></th>
                 
-                    <th style="width: 10%">Hành động</th>
+                    <th style="width: 7%">Hành động</th>
                 </tr>
             </table>
 
             <div class="table-content">
             </div>
 
-            <div class="table-footer">
-                <select name="kieuTimKhachHang">
-                    <option value="ten">Tìm theo họ tên</option>
-                    <option value="email">Tìm theo email</option>
-                    <option value="taikhoan">Tìm theo tài khoản</option>
-                </select>
-                <input type="text" placeholder="Tìm kiếm..." onkeyup="timKiemNguoiDung(this)">
-                <button onclick="openThemNguoiDung()"><i class="fa fa-plus-square"></i> Thêm người dùng</button>
-            </div>
+            
         </div>
+<!-- Sản Phẩm -->
         <div class="danhgia">
             <table class="table-header">
                 <tr>
-                <th title="Sắp xếp"  onclick="sortDanhGiaTable('stt')">Stt <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp"  onclick="sortDanhGiaTable('MaND')">Mã sản phẩm <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp"  onclick="sortDanhGiaTable('MaSP')">Email <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp" onclick="sortDanhGiaTable('SoSao')">Số sao đánh giá <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp" onclick="sortDanhGiaTable('BinhLuan')">Đánh giá <i class="fa fa-sort"></i></th>
-                    <th title="Sắp xếp" onclick="sortDanhGiaTable('NgayLap')">Ngày đánh giá <i class="fa fa-sort"></i></th>
+                    <!-- Theo độ rộng của table content -->
+                    <th title="Sắp xếp" style="width: 5%" onclick="sortDanhGiaTable('stt')">Stt <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" style="width: 5%" onclick="sortDanhGiaTable('masp')">Mã sản phẩm<i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" style="width: 5%" onclick="sortDanhGiaTable('mand')">mã người dùng <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" style="width: 5%" onclick="sortDanhGiaTable('sosao')">Số sao <i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" style="width: 30%" onclick="sortDanhGiaTable('binhluon')">Bình luận<i class="fa fa-sort"></i></th>
+                    <th title="Sắp xếp" style="width: 17%" onclick="sortDanhGiaTable('ngaylap')">Ngày tạo<i class="fa fa-sort"></i></th>
                 </tr>
             </table>
 
             <div class="table-content">
             </div>
-
-            <div class="table-footer">
-                <select name="kieuTimKhachHang">
-                    <option value="ten">Tìm theo họ tên</option>
-                    <option value="email">Tìm theo email</option>
-                    <option value="taikhoan">Tìm theo tài khoản</option>
-                </select>
-                <input type="text" placeholder="Tìm kiếm..." onkeyup="timKiemNguoiDung(this)">
-                <button onclick="openThemNguoiDung()"><i class="fa fa-plus-square"></i> Thêm người dùng</button>
-            </div>
-        </div>
-        
-
-           
-
+        </div> 
         <!-- Thống kê -->
         <div class="thongke">
             <div class="canvasContainer">

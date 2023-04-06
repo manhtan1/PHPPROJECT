@@ -57,7 +57,7 @@ function kiemTraDangNhap(){
     </script>
 
 </head>
- <body class="main-bg" id="hienthiadmin">
+ <body class="main-bg" id="hienthiadmin" style="display:flex;    align-items: center;">
         <div class="login-container text-c animated flipInX">
                 <div>
                     <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>

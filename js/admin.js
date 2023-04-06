@@ -238,6 +238,9 @@ function openTab(nameTab) {
         case 'Khách Hàng':
             document.getElementsByClassName('khachhang')[0].style.display = 'block';
             break;
+        case 'Đánh giá':
+            document.getElementsByClassName('danhgia')[0].style.display = 'block';
+            break;    
         case 'Thống Kê':
             document.getElementsByClassName('thongke')[0].style.display = 'block';
             break;
@@ -725,13 +728,14 @@ function refreshTableDonHang() {
             request: "getall",
         },
         success: function(data, status, xhr) {
-            list_products = data; // biến toàn cục lưu trữ mảng sản phẩm hiện có
+            //list_products = data; // biến toàn cục lưu trữ mảng sản phẩm hiện có
             addTableDonHang(data);
+            console.log(data)
         },
         error: function(e) {
             Swal.fire({
                 type: "error",
-                title: "Lỗi lấy dữ liệu khách Hàng (admin.js > refreshTableKhachHang)",
+                title: "Lỗi lấy dữ liệu khách Hàng (admin.js > refreshTableDonHang)",
                 html: e.responseText
             });
             console.log(e.responseText)
@@ -1036,8 +1040,8 @@ function addTableDANHGIA(data) {
 
         s += `<tr>
             <td >` + (i + 1) + `</td>
-            <td >` + u.MaND + `</td>
             <td >` + u.MaSP + `</td>
+            <td >` + u.MaND + `</td>
             <td >` + u.SoSao + `</td>   
             <td >` + u.BinhLuan + `</td>   
             <td >` + u.NgayLap + `</td>            
@@ -1158,9 +1162,9 @@ function getValueOfTypeInTable_DANHGIA(tr, loai) {
     switch (loai) {
         case 'stt':
             return Number(td[0].innerHTML);
-        case 'MaND':
+        case 'masp':
             return td[1].innerHTML.toLowerCase();
-        case 'MaSP':
+        case 'mand':
             return td[2].innerHTML.toLowerCase();
         case 'SoSao':
             return td[3].innerHTML.toLowerCase();
@@ -1236,9 +1240,3 @@ function progress(percent, bg, width, height) {
                 <div class="progress-bar bg-info" style="width: ` + percent + `%; background-color:` + bg + `"></div>
             </div>`
 }
-
-// for(var i = 0; i < list_products.length; i++) {
-//     list_products[i].masp = list_products[i].company.substring(0, 3) + vitriCompany(list_products[i], i);
-// }
-
-// console.log(JSON.stringify(list_products));

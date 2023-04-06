@@ -1,6 +1,6 @@
 <?php
 	require_once ("../BackEnd/ConnectionDB/DB_classes.php");
-	if(!isset($_POST['request']) && !isset($_GET['request'])) die();
+	if(!isset($_POST['request']) && !isset($_GET['request'])) die(null);
 
 	switch ($_POST['request']) {
 		case 'getalldanhgia':
@@ -9,6 +9,7 @@
 			
 			die (json_encode($danhgia));
 			break;
+			
 		case 'thembinhluan':
 			$masp = $_POST['masp'];
 			$mand = $_POST['mand'];

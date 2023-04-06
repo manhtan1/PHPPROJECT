@@ -411,10 +411,11 @@ function numToString(num, char) {
 }
 
 function stringToNum(str, char) {
-    return Number(str.split(char || '.').join(''));
-}
-
-// https://www.w3schools.com/howto/howto_js_autocomplete.asp
+    str = str || '';
+    char = char || '.';
+    return Number(str.split(char).join(''));
+  }
+  
 function autocomplete(inp, arr) {
     var currentFocus;
 
